@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 const axios = require('axios');
-class RegisterForm extends Component {
+class SignInForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
             username: null,
-            password: null,
-            confirmpassword: null
+            password: null
         }
     }
-  
+
     handleSubmit = () => {
         let options = {
             url: `http://localhost:3000/`,
@@ -48,29 +47,27 @@ class RegisterForm extends Component {
 
     handleChange = (e) => {
         setState({ [e.target.id]: e.target.value })
-
     }
 
     render() {
         return (
-            <form id="register" onSubmit={this.handleSubmit}>
-                <h3>Register</h3>
+            <div>
+                <form id="signIn" onSubmit={this.handleSubmit}>
+                    <h3>Sign In</h3>
 
-                <label htmlFor="username">User Name:</label><br />
-                <input type="text" id="username" name="username" placeholder="Enter your name" onChange={this.handleChange} /><br />
+                    <label htmlFor="username">User Name:</label><br />
+                    <input type="text" id="username" name="username" placeholder="Enter your name" onChange={this.handleChange} /><br />
 
-                <label htmlFor="Password">Password:</label><br />
-                <input type="password" id="password" name="password" placeholder="Enter password photo" onChange={this.handleChange} /><br />
+                    <label htmlFor="Password">Password:</label><br />
+                    <input type="password" id="password" name="password" placeholder="Enter password photo" onChange={this.handleChange} /><br />
 
-                <label htmlFor="confirmPassword">Confirm Password:</label><br />
-                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Passward" onChange={this.handleChange} /><br />
-
-                <button id="submit">Register</button>
-                <button id="cancel" onClick={this.onTrigger}>Cancel</button>
-            </form>
+                    <button id="submit">Sign In</button>
+                    <button id="cancel" onClick={this.onTrigger}>Cancel</button>
+                </form>
+            </div>
         )
     }
 }
 
 
-export default RegisterForm;
+export default SignInForm;
