@@ -5,6 +5,9 @@ import { Provider } from 'react-redux'
 import rootReducer from './reducers/rootReducer';
 import App from './App.js';
 import reportWebVitals from './reportWebVitals';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
 
 const store = createStore(rootReducer);
 
@@ -22,3 +25,4 @@ ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementB
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
